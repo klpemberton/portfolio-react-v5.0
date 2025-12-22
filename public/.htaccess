@@ -1,0 +1,91 @@
+RewriteEngine On
+
+# -----------------------------------------
+# 1. Force HTTPS
+# -----------------------------------------
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# -----------------------------------------
+# 2. Force non-WWW
+# -----------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.kristinepemberton\.com [NC]
+RewriteRule ^(.*)$ https://kristinepemberton.com/$1 [L,R=301]
+
+# -----------------------------------------
+# 3. ALLOW existing files and directories
+# -----------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# -----------------------------------------
+# 4. Next.js static export routing
+#    Next.js static export creates: about.html, contact.html, portfolio.html
+#    Rewrite /about -> /about.html
+#    Rewrite /portfolio -> /portfolio.html
+#    etc.
+# -----------------------------------------
+# Remove trailing slash first
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.*)/$
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Rewrite to .html extension if file exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# -----------------------------------------
+# 5. Default document
+# -----------------------------------------
+DirectoryIndex index.html
+
+# -----------------------------------------
+# 6. Enable compression
+# -----------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# -----------------------------------------
+# 7. Cache static assets (but NOT HTML files)
+# -----------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Don't cache HTML files - always fetch fresh content
+  ExpiresByType text/html "access plus 0 seconds"
+  # Cache images for 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  # Cache CSS/JS for 1 month (Next.js adds hashes to filenames for cache busting)
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+# -----------------------------------------
+# 8. Security headers and cache control for HTML
+# -----------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Prevent caching of HTML files
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the "PHP" package.
+# php -- END cPanel-generated handler, do not edit

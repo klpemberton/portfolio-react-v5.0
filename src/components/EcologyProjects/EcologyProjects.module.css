@@ -1,0 +1,64 @@
+.ecology-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 875px) {
+  .ecology-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+.ecology-item {
+  margin-top: 0;
+}
+
+.ecology-item-name {
+  padding-bottom: var(--spacing-sm);
+}
+
+.ecology-item-link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
+}
+
+.ecology-item-link:hover {
+  color: var(--color-portfolio);
+}
+
+.ecology-item-links {
+  margin-bottom: var(--spacing-md);
+}
+
+.ecology-dates-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ecology-date-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-portfolio);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  background-color: transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ecology-date-badge:hover {
+  background-color: var(--color-portfolio);
+  color: var(--color-bg-primary);
+  transform: translateY(-2px);
+}

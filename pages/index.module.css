@@ -1,0 +1,134 @@
+.heading {
+  margin: var(--spacing-lg) 0 0;
+  text-align: center;
+  padding-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xl, 1.5rem);
+  line-height: var(--line-height-relaxed);
+}
+
+.heading span {
+  border-bottom: 6px solid var(--color-home);
+}
+
+.subheading {
+  width: 100%;
+  margin: var(--spacing-lg) auto var(--spacing-sm);
+  text-align: center;
+  line-height: 1.69;
+  border-bottom: none;
+}
+
+.subheading span {
+  border-bottom: 6px solid var(--color-home);
+}
+
+.heading-no-underline {
+  text-align: center;
+}
+
+.intro-heading-no-underline {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.small-heading-no-underline {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.very-small-heading-no-underline {
+  font-size: 14px;
+}
+
+.paragraph {
+  margin: var(--spacing-sm) 0;
+}
+
+.columns {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 875px) {
+  .columns {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.columns .list:nth-child(2) {
+  margin-top: 15px;
+}
+
+@media (min-width: 875px) {
+  .columns .list:nth-child(2) {
+    margin: 0 1em;
+  }
+}
+
+.list-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 2px 0 4px;
+  font-weight: bold;
+  border-bottom: 3px solid var(--color-home);
+}
+
+.list-heading > span {
+  width: 100%;
+}
+
+.list-heading > span:nth-child(1) {
+  width: 40px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.list-heading > span:not(:first-child):nth-child(1) {
+  margin-right: 10px;
+}
+
+.list-heading > span:nth-child(2) {
+  font-size: 18px;
+}
+
+.list-item {
+  margin-top: 3px;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.education {
+  width: 100%;
+  margin: 3em auto 2em;
+  text-align: center;
+  font-family:
+    var(--font-instrument-sans), 'helvetica-neue', 'arial', sans-serif;
+}
+
+.education .heading {
+  margin: var(--spacing-sm) 0 0;
+  padding-bottom: var(--spacing-xs);
+  line-height: var(--line-height-tight);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.education .small-heading {
+  font-family:
+    var(--font-instrument-sans), 'helvetica-neue', 'arial', sans-serif;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.skills-list span {
+  display: inline;
+  font-size: var(--font-size-sm);
+}
