@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js, React, and TypeScript. This site showcases my professional experience, projects, and skills as a Senior Frontend Engineer.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 16](https://nextjs.org/) (Static Export)
 - **Language**: TypeScript
@@ -10,12 +10,12 @@ A modern, responsive portfolio website built with Next.js, React, and TypeScript
 - **Styling**: CSS Modules
 - **Package Manager**: pnpm
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js 18+ (or as specified in `package.json` engines)
 - pnpm (recommended) or npm/yarn
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Installation
 
@@ -49,7 +49,7 @@ pnpm test:build
 
 This builds the site and serves it locally so you can test the production build before deploying.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio-react-v4.0/
@@ -83,7 +83,7 @@ portfolio-react-v4.0/
 └── package.json       # Dependencies and scripts
 ```
 
-## 🎨 Features
+## Features
 
 - **Responsive Design**: Mobile-first, works on all screen sizes
 - **Performance Optimized**: Static export for fast loading
@@ -91,7 +91,7 @@ portfolio-react-v4.0/
 - **Accessible**: Semantic HTML and ARIA attributes
 - **SEO Friendly**: Proper meta tags and structured data
 
-## 📝 Scripts
+## Scripts
 
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
@@ -101,7 +101,7 @@ portfolio-react-v4.0/
 - `pnpm format:check` - Check code formatting
 - `pnpm lint` - Run ESLint
 
-## 🧪 Code Quality
+## Code Quality
 
 - **ESLint**: Configured with Next.js and Prettier
 - **Prettier**: Code formatting
