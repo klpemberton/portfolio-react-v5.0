@@ -1,33 +1,18 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
 import PageContent from '../src/components/PageContent/PageContent';
 import ImageGallery from '../src/components/ImageGallery/ImageGallery';
 import Animated from '../src/components/Animated/Animated';
 import WebProjects from '../src/components/WebProjects/WebProjects';
 import EcologyProjects from '../src/components/EcologyProjects/EcologyProjects';
-import useIntersectionObserver from '../src/hooks/useIntersectionObserver';
+import { useInView } from '../src/hooks/useInView';
 import styles from './portfolio.module.css';
 import { printPortfolioPhotos } from '../src/components/ImageGallery/data';
 
 const PortfolioPage = () => {
-  const [showGallery, setShowGallery] = useState<boolean>(false);
-  const galleryRef = useRef<HTMLDivElement | null>(null);
-
-  const options = useMemo(
-    () => ({
-      root: null,
-      rootMargin: '100px',
-      threshold: 0.5,
-    }),
-    []
-  );
-
-  const entry = useIntersectionObserver(options, galleryRef);
-
-  useEffect(() => {
-    if (entry?.isIntersecting) {
-      setShowGallery(true);
-    }
-  }, [entry]);
+  const { ref: galleryRef, isVisible: showGallery } = useInView({
+    threshold: 0.5,
+    rootMargin: '100px',
+    triggerOnce: true,
+  });
 
   return (
     <PageContent>

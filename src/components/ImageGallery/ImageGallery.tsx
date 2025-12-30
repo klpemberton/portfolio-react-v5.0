@@ -37,10 +37,7 @@ const ImageGallery = forwardRef<HTMLDivElement, ImageGalleryProps>(
           const { width, height } = thumbnailDimensions[photoIndex];
 
           return (
-            <div
-              key={photo.src}
-              className={styles['gallery-item']}
-            >
+            <div key={photo.src} className={styles['gallery-item']}>
               <LazyImage
                 src={photo.src}
                 alt={photo.alt || `Gallery image ${photoIndex + 1}`}

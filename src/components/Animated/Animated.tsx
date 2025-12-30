@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { useAnimateOnScroll } from '../../hooks/useAnimateOnScroll';
+import { useInView } from '../../hooks/useInView';
 import styles from './Animated.module.css';
 
 interface AnimatedProps {
@@ -27,7 +27,7 @@ const Animated = ({
   className = '',
   animateOnLoad = false,
 }: AnimatedProps) => {
-  const { ref, isVisible: isVisibleFromScroll } = useAnimateOnScroll({
+  const { ref, isVisible: isVisibleFromScroll } = useInView({
     threshold,
     triggerOnce: true,
   });

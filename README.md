@@ -8,8 +8,6 @@ A modern, responsive portfolio website built with Next.js, React, and TypeScript
 - **Language**: TypeScript
 - **UI Library**: React 19
 - **Styling**: CSS Modules
-- **Icons**: React Icons
-- **Image Gallery**: Yet Another React Lightbox
 - **Package Manager**: pnpm
 
 ## 📋 Prerequisites
@@ -66,7 +64,6 @@ portfolio-react-v4.0/
 ├── src/
 │   ├── components/    # React components
 │   │   ├── Animated/           # Animation wrapper
-│   │   ├── AnimateOnScroll/    # Scroll animations
 │   │   ├── ImageGallery/       # Image gallery component
 │   │   ├── PageContent/        # Page content wrapper
 │   │   ├── ResumeJobsInfo/     # Resume job listings
@@ -74,15 +71,8 @@ portfolio-react-v4.0/
 │   │   ├── SiteHead/           # SEO head component
 │   │   ├── SiteHeader/         # Site header/navigation
 │   │   ├── SiteLayout/         # Main layout wrapper
-│   │   ├── SiteNavigation/     # Navigation component
-│   │   └── SiteNavigationItem/ # Navigation item
-│   ├── constants/     # Data constants
-│   │   ├── galleryPhotos.tsx
-│   │   ├── navData.tsx
-│   │   └── resumeData.tsx
 │   ├── hooks/         # Custom React hooks
-│   │   ├── useAnimateOnScroll.tsx
-│   │   └── useIntersectionObserver.tsx
+│   │   ├── useInView.tsx
 │   ├── lib/           # Utilities
 │   │   └── fonts.ts   # Font configuration
 │   └── styles/        # Global styles
@@ -100,8 +90,6 @@ portfolio-react-v4.0/
 - **Type-Safe**: Full TypeScript implementation
 - **Accessible**: Semantic HTML and ARIA attributes
 - **SEO Friendly**: Proper meta tags and structured data
-- **Smooth Animations**: Custom animation components
-- **Image Gallery**: Interactive lightbox for portfolio images
 
 ## 📝 Scripts
 
@@ -113,36 +101,9 @@ portfolio-react-v4.0/
 - `pnpm format:check` - Check code formatting
 - `pnpm lint` - Run ESLint
 
-## 🚢 Deployment
-
-This site is configured for static export and can be deployed to any static hosting service.
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
-
-### Quick Deploy
-
-```bash
-# Build the site
-pnpm build
-
-# Upload the contents of ./out to your hosting provider
-```
-
 ## 🧪 Code Quality
 
 - **ESLint**: Configured with Next.js and Prettier
 - **Prettier**: Code formatting
 - **TypeScript**: Strict type checking enabled
 - **No Console Logs**: ESLint rule prevents console statements in production code
-
-## 📄 License
-
-ISC
-
-## 👤 Author
-
-Kristine Pemberton
-
----
-
-Built with ❤️ using Next.js and React

@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState, RefObject } from 'react';
 
-interface UseAnimateOnScrollOptions {
+interface UseInViewOptions {
   threshold?: number;
   rootMargin?: string;
   triggerOnce?: boolean;
 }
 
-interface UseAnimateOnScrollReturn<T extends HTMLElement> {
+interface UseInViewReturn<T extends HTMLElement> {
   ref: RefObject<T | null>;
   isVisible: boolean;
 }
 
-export function useAnimateOnScroll<T extends HTMLElement = HTMLDivElement>(
-  options: UseAnimateOnScrollOptions = {}
-): UseAnimateOnScrollReturn<T> {
+export function useInView<T extends HTMLElement = HTMLDivElement>(
+  options: UseInViewOptions = {}
+): UseInViewReturn<T> {
   const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
 
   const [isVisible, setIsVisible] = useState<boolean>(false);

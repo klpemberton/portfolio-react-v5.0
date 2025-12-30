@@ -19,7 +19,13 @@ const HomePage = () => {
 
       <Animated animation="fadeInUp" delay={300} animateOnLoad>
         <p className={styles.paragraph}>
-          Senior Frontend Engineer with 12+ years of hands-on experience building and maintaining large-scale user interfaces, design systems, and frontend tooling. Deep expertise in React, TypeScript, testing strategy, and modern build systems, with a strong focus on performance, accessibility, and long-term maintainability. Proven track record of owning frontend architecture and collaborating effectively on fully remote engineering teams.
+          Senior Frontend Engineer with 12+ years of hands-on experience
+          building and maintaining large-scale user interfaces, design systems,
+          and frontend tooling. Deep expertise in React, TypeScript, testing
+          strategy, and modern build systems, with a strong focus on
+          performance, accessibility, and long-term maintainability. Proven
+          track record of owning frontend architecture and collaborating
+          effectively on fully remote engineering teams.
         </p>
       </Animated>
 
