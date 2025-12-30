@@ -15,9 +15,30 @@ export interface ResumeData {
 export type AdditionalJob = Pick<ResumeData, 'title' | 'dates'> &
   Pick<JobDetails, 'company' | 'location'>;
 
+// Skills section
+export interface SkillsData {
+  categories?: {
+    [category: string]: string[];
+  };
+  all?: string[];
+}
+
+export const Skills: SkillsData = {
+  all: [
+    'Frontend Architecture & Design Systems',
+    'React & TypeScript',
+    'Testing Strategy & Tooling',
+    'Performance & Accessibility',
+    'Build Tooling & Package Management',
+    'Technical Leadership & Decision-Making',
+    'Mentorship & Code Quality Standards',
+    'AI-assisted Development (Cursor)',
+  ],
+};
+
 export const JobsDataFeatured: ResumeData[] = [
   {
-    title: 'Senior Frontend Engineer',
+    title: 'Senior Frontend Software Engineer',
     dates: '11/2023 - 08/2025',
     details: [
       {
@@ -25,16 +46,16 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'Remote',
         industry: 'Fundraising',
         summary:
-          'Build new React + React Query fundraising and reporting tools. Improve existing frontend application performance and optimize user experience and accessibility.',
+          'Implemented React + TypeScript tools for fundraising and reporting, optimizing performance and user experience.',
         accomplishments: [
-          'Implemented new React + TypeScript  event ticketing platform for fundraisers.',
-          'Migrated legacy frontend codebase to more modern tech stack (Rails to React + TypeScript).',
+          'Delivered a new event ticketing platform, providing an improved interface for managing fundraisers.',
+          'Led migration of legacy Rails frontend code to a modern React + TypeScript stack, reducing technical debt and streamlining future development.',
         ],
       },
     ],
   },
   {
-    title: 'Staff Software Engineer',
+    title: 'Staff Frontend Software Engineer',
     dates: '04/2023 - 06/2023',
     details: [
       {
@@ -42,9 +63,9 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'Remote',
         industry: 'Healthcare',
         summary:
-          'The Pill Club was a wellbeing coalition dedicated to accessible, affordable birth control, skin care, and more. Led technical design, planning, implementation, and delegation. Worked with cross-functional teams to build large-scale features and evolve systems and processes toward long-term strategies. Leveled up all teams through mentoring, collaboration, and effective communication.',
+          'Led technical design and execution of key frontend initiatives in a staff-level capacity. Partnered with product, design, and backend teams to deliver high-impact features and scalable frontend systems.',
         accomplishments: [
-          'Led frontend implementation of new React + TypeScript  self-service patient renewal funnel.',
+          'Delivered a React + TypeScript self-service patient renewal funnel, improving engagement and reducing renewal friction.',
         ],
       },
     ],
@@ -58,11 +79,11 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'Remote',
         industry: 'Healthcare',
         summary:
-          'As Frontend Tech Lead, led frontend technical design, planning, implementation, and delegation. Led and owned the patient-facing React experience, improving retention and conversion. Worked with cross-functional teams to craft patient-facing features and develop internal tools to improve business processes. Performed code review and mentored junior engineers. Continually improved frontend tooling and helped define development standards and best practices.',
+          'Owned technical direction and frontend delivery as Tech Lead, driving architecture, planning, and implementation for patient-facing and internal applications. Improved retention and conversion by owning and iterating on the patient-facing React experience.',
         accomplishments: [
-          'Led frontend implementation of Cypress e2e testing.',
-          'Led frontend implementation of new React + TypeScript patient dashboard.',
-          'Co-led frontend implementation of new React + WebRTC video telemedicine platform.',
+          'Spearheaded Cypress e2e testing implementation, improving reliability and confidence in releases.',
+          'Delivered a modern React + TypeScript patient dashboard, improving usability and maintainability.',
+          'Co-led the development of a React + WebRTC telemedicine platform, enabling scalable video interactions for patients and providers.',
         ],
       },
     ],
@@ -76,10 +97,10 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'Remote',
         industry: 'eCommerce / Fashion',
         summary:
-          'For global fashion brand JustFab, upgraded the legacy ColdFusion codebase to use the new Bento microservices platform, and implemented a brand-new React + Redux frontend. Optimized existing applications for maximum speed and scalability. Provided mentoring and training on new frontend tools and features.',
+          'Owned design and implementation of React + Redux frontends across multiple high-traffic fashion brands, ensuring scalable and maintainable systems. Built high-impact interfaces and optimized application performance, enhancing the experience for millions of active users.',
         accomplishments: [
-          'Led migration from ColdFusion to React for the JustFab and ShoeDazzle brands.',
-          'Implemented new Smart Filters product filtering functionality for JustFab using Vue.js.',
+          'Drove frontend modernization efforts, including migrating JustFab and ShoeDazzle from ColdFusion to React, improving performance, maintainability, and developer efficiency.',
+          'Contributed to shared component libraries and backend integrations, streamlining cross-brand feature development.',
         ],
       },
     ],
@@ -93,11 +114,10 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'San Luis Obispo, CA',
         industry: 'Financial Services',
         summary:
-          'Coordinated frontend deliverables as Project Lead. Trained junior developers on process and web development best practices. Worked independently and coordinated with multiple departments while maintaining effective communication and a shared knowledge base with the frontend team. Provided frontend project design and guided sprint planning for front-end initiatives.',
+          'Owned frontend architecture and delivery as Project Lead, collaborating cross-functionally to ensure scalable, maintainable solutions.',
         accomplishments: [
-          'One of only two frontend developers on the Partner team, which brings in millions of dollars annually through contracts with Chase, American Express, and other large financial institutions.',
-          'Led design and implementation of new features such as Multi-Bureau Credit Lock.',
-          'Constantly evaluated frontend workflow and made improvements in order to reduce technical debt, optimize Node/npm build process, and improve coding efficiency.',
+          'Led design and development of Multi-Bureau Credit Lock, a high-impact feature enhancing user control and engagement.',
+          'Improved build tooling and frontend processes, increasing team efficiency and reducing long-term maintenance overhead.',
         ],
       },
     ],
@@ -111,10 +131,10 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'San Luis Obispo, CA',
         industry: 'Financial Services',
         summary:
-          'Collaborated with multiple departments to envision, implement, and maintain top-quality web-based credit monitoring products viewed by millions of users. Worked independently or with a team of developers on project initiatives and deliver clean, efficient, and compliant code. Ensured code compatibility and functionality across all supported desktop browsers and mobile devices. Worked closely with the quality assurance team to draft test cases for new features and to resolve bugs on existing features if/when they arose. Maintained accurate documentation and task tracking via various project management systems (JIRA, Confluence), as part of the agile development process.',
+          'Built performant high-traffic credit monitoring web applications viewed by millions, with a focus on maintainability, performance, and user experience.',
         accomplishments: [
-          'Contributed to multiple new website and feature launches, such as trueidentity.com.',
-          'Implemented new revenue-generating features such as dynamic ads and upsells.',
+          'Played a key role in multiple website and feature launches, including trueidentity.com.',
+          'Delivered revenue-driving frontend features, including dynamic ads and upsells, contributing to increased monetization.',
         ],
       },
     ],
@@ -128,10 +148,9 @@ export const JobsDataFeatured: ResumeData[] = [
         location: 'Bloomington, IN',
         industry: 'Medical Devices',
         summary:
-          'Worked with visual designers, back-end developers, project stakeholders, and management to envision and implement quality business systems; wrote clean, compliant, and future-friendly code for enterprise applications and public-facing websites; ensured compatibility across all browsers, platforms, and devices and worked closely with UA team to draft unit tests and resolve bugs if/as they arise; drafted technical documentation for projects as part of the agile development process.',
+          "Played a key role in the redesign and relaunch of cookmedical.com, the company's flagship public website.",
         accomplishments: [
-          "Contributed to the complete overhaul and relaunch of the company's flagship website, cookmedical.com",
-          "Redesigned and updated the company's Physician Certification Inventory System, making it much more user-friendly and maintainable",
+          'Led frontend modernization of the Physician Certification Inventory System, improving usability and reducing ongoing maintenance overhead.',
         ],
       },
     ],

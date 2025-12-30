@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-md);
 }
 
 @media (min-width: 875px) {
   .ecology-projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
   }
 }
 

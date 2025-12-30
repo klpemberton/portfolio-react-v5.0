@@ -60,6 +60,12 @@ const LazyImage = ({
     onLoad?.();
   };
 
+  // Calculate intrinsic dimensions for Next.js optimization
+  // Use a high resolution (2000px) based on aspect ratio for proper optimization
+  const aspectRatio = width / height;
+  const intrinsicWidth = 2000;
+  const intrinsicHeight = Math.round(intrinsicWidth / aspectRatio);
+
   return (
     <div
       ref={imgRef}
@@ -69,12 +75,18 @@ const LazyImage = ({
         <Image
           src={src}
           alt={alt}
-          width={width}
-          height={height}
+          width={intrinsicWidth}
+          height={intrinsicHeight}
+          sizes="(max-width: 899px) 50vw, (max-width: 1499px) 33vw, 25vw"
+          quality={85}
           className={classNames(
             styles['gallery-image'],
             isLoaded ? styles['image-loaded'] : styles['image-loading']
           )}
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
           onLoad={handleLoad}
           loading={priority ? 'eager' : 'lazy'}
         />

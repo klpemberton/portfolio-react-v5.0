@@ -18,6 +18,6 @@ export const webProjects: WebProject[] = [
     url: 'https://skamanianativeplants.com',
     tools: 'Shopify Liquid, JavaScript, CSS',
     summary:
-      "My backyard native plant nursery. I opted for a fully-managed service to handle the UI, inventory, payments, and shipping so that I can spend more time with the plants and less on configuration. I customize the theme where needed using Shopify's Liquid template language, JavaScript, and CSS.",
+      "My backyard native plant nursery. I opted for a managed service so that I can spend more time with the plants and less on maintenance and configuration. I customize the site using Shopify's Liquid template language, JavaScript, and CSS.",
   },
 ];

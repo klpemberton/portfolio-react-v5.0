@@ -69,7 +69,6 @@
   break-inside: avoid;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   border-radius: 8px;
   transition:
     transform var(--transition-fast),

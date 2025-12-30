@@ -5,7 +5,7 @@ import styles from './ResumeJobsInfo.module.css';
 
 const Resume = memo(() => (
   <section
-    className={styles.resumeSection}
+    className={styles['resume-section']}
     aria-label="Professional Experience"
   >
     <div className={styles.accordion} role="region" aria-label="Job History">

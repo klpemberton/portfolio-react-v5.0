@@ -1,32 +1,8 @@
 import PageContent from '../src/components/PageContent/PageContent';
 import ResumeJobsInfo from '../src/components/ResumeJobsInfo/ResumeJobsInfo';
 import Animated from '../src/components/Animated/Animated';
+import { Skills } from '../src/components/ResumeJobsInfo/data';
 import styles from './index.module.css';
-
-const skills: string[] = [
-  'React',
-  'TypeScript',
-  'JavaScript',
-  'Cursor',
-  'Git/GitHub',
-  'GraphQL',
-  'Package Management (pnpm, npm, yarn)',
-  'Next.js',
-  'Node.js',
-  'TanStack',
-  'Storybook',
-  'Cypress',
-  'Playwright',
-  'Jest',
-  'JSON',
-  'AWS (S3, API Gateway, CloudFront)',
-  'Docker',
-  'Gatsby',
-  'Vue',
-  'Tailwind',
-  'ShadCN',
-  'Radix UI',
-] as const;
 
 const HomePage = () => {
   return (
@@ -43,12 +19,7 @@ const HomePage = () => {
 
       <Animated animation="fadeInUp" delay={300} animateOnLoad>
         <p className={styles.paragraph}>
-          Frontend engineer with 12 years of hands-on experience developing
-          impactful user interfaces and related tooling. Expertise in various
-          frontend languages, frameworks, and build systems, with a proven
-          ability to quickly master new technologies. Reliable, collaborative
-          self-starter with excellent communication skills and a strong track
-          record of success in remote engineering teams.
+          Senior Frontend Engineer with 12+ years of hands-on experience building and maintaining large-scale user interfaces, design systems, and frontend tooling. Deep expertise in React, TypeScript, testing strategy, and modern build systems, with a strong focus on performance, accessibility, and long-term maintainability. Proven track record of owning frontend architecture and collaborating effectively on fully remote engineering teams.
         </p>
       </Animated>
 
@@ -57,7 +28,13 @@ const HomePage = () => {
       </Animated>
 
       <Animated animation="fadeInUp" delay={500} animateOnLoad>
-        <p className={styles.paragraph}>{skills.join(', ')}</p>
+        <ul className={styles['skills-list']}>
+          {Skills.all?.map((skill, index) => (
+            <li key={index} className={styles['skill-item']}>
+              {skill}
+            </li>
+          ))}
+        </ul>
       </Animated>
 
       <Animated animation="fadeInUp" delay={600} animateOnLoad>
