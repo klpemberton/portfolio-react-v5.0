@@ -7,6 +7,12 @@ export interface GalleryPhoto {
 
 export const galleryPhotos: GalleryPhoto[] = [
   {
+    src: '/kp32.jpg',
+    width: 3,
+    height: 4,
+    alt: 'Gifford Pinchot National Forest',
+  },
+  {
     src: '/kp30.jpg',
     width: 4,
     height: 3,

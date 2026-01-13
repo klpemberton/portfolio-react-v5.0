@@ -19,11 +19,6 @@ build/
 .env.local
 .env*.local
 
-# Next.js
-# Note: next-env.d.ts is typically committed, but can be regenerated
-# Uncomment the line below if you prefer to exclude it
-# next-env.d.ts
-
 # IDE
 .DS_Store
 .vscode/
@@ -46,3 +41,6 @@ DEPLOYMENT.md
 # Misc
 .svn/
 *.pem
+
+# Public assets
+public/

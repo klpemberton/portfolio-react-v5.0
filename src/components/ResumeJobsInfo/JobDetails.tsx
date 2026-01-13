@@ -76,7 +76,6 @@ const JobDetails = ({ title, dates, details }: ResumeData) => {
               company,
               location,
               industry,
-              summary,
               accomplishments,
             }: JobDetail) => {
               return (
@@ -87,10 +86,6 @@ const JobDetails = ({ title, dates, details }: ResumeData) => {
                       {location}
                     </p>
                   </div>
-                  <p className={styles.summary}>{summary}</p>
-                  <h4 className={styles['accomplishments-header']}>
-                    Selected Accomplishments:
-                  </h4>
 
                   <ul className={styles.accomplishments}>
                     {accomplishments.map(

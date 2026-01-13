@@ -200,18 +200,6 @@
   font-weight: 600;
 }
 
-.summary {
-  margin: var(--spacing-md) 0;
-  line-height: var(--line-height-normal);
-}
-
-.accomplishments-header {
-  margin: var(--spacing-lg) 0 var(--spacing-sm);
-  font-weight: 600;
-  color: var(--color-text-primary);
-  text-transform: none;
-}
-
 .accomplishments {
   margin: var(--spacing-sm) 0 var(--spacing-xl);
   padding-left: var(--spacing-lg);
