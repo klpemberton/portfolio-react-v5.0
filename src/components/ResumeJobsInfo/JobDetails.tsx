@@ -1,9 +1,9 @@
 import { useCallback, useState, useId, KeyboardEvent, useMemo } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
-import { JobDetails as JobDetail, ResumeData } from './data';
+import { JobDetails as JobDetail, ResumeJobsData } from './data';
 import styles from './JobDetails.module.css';
 
-const JobDetails = ({ title, dates, details }: ResumeData) => {
+const JobDetails = ({ title, dates, details }: ResumeJobsData) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const headingId = useId();
   const contentId = useId();

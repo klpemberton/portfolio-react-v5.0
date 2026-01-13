@@ -5,26 +5,26 @@ export interface JobDetails {
   accomplishments: string[];
 }
 
-export interface ResumeData {
+export interface ResumeJobsData {
   title: string;
   dates: string;
   details: JobDetails[];
 }
 
-export type AdditionalJob = Pick<ResumeData, 'title' | 'dates'> &
+export type AdditionalResumeJob = Pick<ResumeJobsData, 'title' | 'dates'> &
   Pick<JobDetails, 'company' | 'location'>;
 
 export interface SkillsData {
   categories?: {
     [category: string]: string[];
   };
-  all?: string[];
+  all?: string[]; 
 }
 
-export const Skills: SkillsData = {
+export const skillsData: SkillsData = {
   all: [
-    'Frontend Architecture & Design Systems',
-    'React & TypeScript',
+    'Frontend Architecture & Component Libraries',
+    'JavaScript, React & TypeScript',
     'Testing Strategy & Tooling',
     'Performance & Accessibility',
     'Build Tooling & Package Management',
@@ -34,7 +34,7 @@ export const Skills: SkillsData = {
   ],
 };
 
-export const JobsDataFeatured: ResumeData[] = [
+export const resumeJobsData: ResumeJobsData[] = [
   {
     title: 'Senior Frontend Software Engineer',
     dates: '11/2023 - 08/2025',

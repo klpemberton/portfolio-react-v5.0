@@ -1,7 +1,7 @@
 import PageContent from '../src/components/PageContent/PageContent';
 import ResumeJobsInfo from '../src/components/ResumeJobsInfo/ResumeJobsInfo';
 import Animated from '../src/components/Animated/Animated';
-import { Skills } from '../src/components/ResumeJobsInfo/data';
+import { skillsData } from '../src/components/ResumeJobsInfo/data';
 import styles from './index.module.css';
 
 const HomePage = () => {
@@ -29,7 +29,7 @@ const HomePage = () => {
 
       <Animated animation="fadeInUp" delay={500} animateOnLoad>
         <ul className={styles['skills-list']}>
-          {Skills.all?.map((skill, index) => (
+          {skillsData.all?.map((skill: string, index: number) => (
             <li key={index} className={styles['skill-item']}>
               {skill}
             </li>
